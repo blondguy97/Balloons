@@ -1,0 +1,391 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(phone) {
+        font-size: 30%;
+    }
+    @include respond(big-screen) {
+        font-size: 75%;
+    }
+}
+
+body {
+    font-family: "Roboto", "arial", "sans-serif";
+    font-weight: 400;
+    color: $gray-dark;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    padding: 5rem;
+    background-color: #fff;
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
+    @include respond(phone) {
+        padding: 0rem;
+
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.wrapper {
+    background-color: $gray-light;
+    position: relative;
+    z-index: 0;
+}
+
+.header {
+    overflow-x: hidden;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%),
+        url("../../img/header/header-bg.jpg") center/cover no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 82%);
+    position: relative;
+    color: #fff;
+    &__logo {
+        position: absolute;
+        top: 5rem;
+        left: 5rem;
+    }
+    &__logo-img {
+        height: 7rem;
+        width: 5.6rem;
+        object-fit: cover;
+    }
+    &__box {
+        text-transform: uppercase;
+        position: absolute;
+        top: 40%;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        @include respond(tab-land) {
+            top: 50%;
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 5rem;
+        line-height: 1.2;
+        animation-name: leftToRight;
+        animation-duration: 2s;
+        letter-spacing: 1rem;
+        margin-bottom: 1rem;
+        @include respond(tab-land) {
+            font-size: 3.5rem;
+        }
+        @include respond(tab-port) {
+            font-size: 2.5rem;
+            letter-spacing: 0.5rem;
+        }
+    }
+    &__subtitle {
+        font-weight: 300;
+        font-size: 4rem;
+        animation-name: rightToLeft;
+        animation-duration: 2s;
+        line-height: 1.2;
+        text-transform: lowercase;
+        letter-spacing: 0.5rem;
+        margin-bottom: 5rem;
+        @include respond(tab-land) {
+            font-size: 3rem;
+            margin-bottom: 3.5rem;
+        }
+        @include respond(tab-port) {
+            font-size: 2rem;
+        }
+    }
+    &__btn {
+        padding: 1.5rem 4rem;
+    }
+}
+
+.about {
+    text-align: center;
+    padding-top: 8rem;
+    @include respond(tab-port) {
+        margin-bottom: 40rem;
+    }
+    &__title {
+        margin-bottom: 8rem;
+        @include respond(tab-land) {
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+.about-freedom {
+    text-align: left;
+    margin-bottom: 5.4rem;
+    &__title {
+        margin-bottom: 1rem;
+    }
+    &__text {
+        font-size: 1.6rem;
+        line-height: 1.37;
+        margin-bottom: 3rem;
+        &:last-of-type {
+            margin-bottom: 5rem;
+        }
+        @include respond(tab-land) {
+            font-size: 1.5rem;
+        }
+    }
+    &__images {
+        position: relative;
+    }
+    &__photo {
+        width: 55%;
+        border-radius: 0.5rem;
+        position: absolute;
+        transition: 0.4s all;
+        &_1 {
+            top: 0;
+            left: 0rem;
+        }
+        &_2 {
+            top: 9rem;
+            right: 0;
+        }
+        &_3 {
+            top: 16.4rem;
+            left: 2.2rem;
+        }
+        &:hover {
+            transform: scale(1.1);
+            z-index: 19;
+        }
+    }
+}
+
+.advantages {
+    background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%),
+        url("../../img/advantages/advantages-bg.jpg") center/cover no-repeat;
+    overflow-x: hidden;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+    padding: 21rem 0;
+    @include respond(tab-port) {
+        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    }
+    &__card {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 0.5rem;
+        text-align: center;
+        padding: 1.7rem;
+        min-height: 30rem;
+        width: 100%;
+        @include respond(phone) {
+            padding: 3.5rem;
+
+        }
+    }
+    &__img {
+        margin-bottom: 2rem;
+        width: 6rem;
+        height: 6rem;
+    }
+    &__title {
+        margin-bottom: 1rem;
+    }
+    @include respond(tab-land) {
+        padding: 15rem 0;
+    }
+}
+
+.tours {
+    padding: 8rem 0;
+    text-align: center;
+    &__title {
+        margin-bottom: 8rem;
+    }
+    &__btn {
+        margin-top: 8rem;
+    }
+}
+
+.reviews {
+    text-align: center;
+    position: relative;
+    padding: 8rem 0;
+    &__title {
+        color: #fff;
+        margin-bottom: 8rem;
+    }
+}
+
+.form {
+    padding: 10rem;
+    background: linear-gradient(90deg, $brown-light, $brown-dark);
+    @include respond(phone) {
+        padding: 4rem;
+    }
+}
+
+.footer {
+    background-color: #333333;
+    padding: 8rem 0;
+    &__wrapper {
+        text-align: center;
+    }
+    &__logo {
+        margin-bottom: 5rem;
+        display: inline-block;
+    }
+    &__logo-img {
+        width: 12rem;
+        height: 15rem;
+        object-fit: cover;
+    }
+    &__item {
+        display: inline-block;
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 1.18;
+        color: #ffffff;
+        transition: 0.3s all;
+        @include respond(tab-land) {
+            font-size: 1.3rem;
+        }
+        @include respond(phone) {
+            display: block;
+        }
+        
+    }
+    &__item:hover {
+        transform: skew(-15deg) scale(1.1);
+        color: $brown-light;
+    }
+    &__item {
+        padding: 1rem 0;
+        @include respond(tab-port) {
+            padding: 2rem;
+        }
+    }
+    &__item + &__item {
+        margin-left: 5rem;
+        @include respond(tab-land) {
+            margin-left: 3rem;
+        }
+        @include respond(phone) {
+            margin-left: 0;
+        }
+    }
+}
+
+.navigation {
+    &__line {
+        background-color: #000;
+        width: 3.5rem;
+        height: 0.2rem;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    &__toggle {
+        display: none;
+    }
+    &__toggle:checked ~ .navigation__background {
+        transform: scale(100);
+    }
+    &__toggle:checked ~ .navigation__nav {
+        width: 100%;
+        opacity: 1;
+    }
+
+    &__btn {
+        background-color: #fff;
+        height: 9rem;
+        width: 9rem;
+        border-radius: 50%;
+        position: fixed;
+        cursor: pointer;
+        top: 9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0 0.6rem 0.6rem rgb(0 0 0 / 30%);
+        align-items: center;
+        right: 8rem;
+        z-index: 200;
+    }
+
+    &__background {
+        background: radial-gradient($brown-light, $brown-dark);
+        width: 9rem;
+        height: 9rem;
+        border-radius: 50%;
+        position: fixed;
+        z-index: 100;
+        top: 9rem;
+        right: 8rem;
+        transition: 0.3s all;
+    }
+
+    &__nav {
+        height: 100vh;
+        width: 0%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 150;
+        opacity: 0;
+        transition: 0.3s all;
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 6rem;
+    }
+
+    &__link {
+        font-size: 4rem;
+        line-height: 1.2;
+        letter-spacing: 0.5rem;
+        color: #ffffff;
+        text-transform: uppercase;
+        background: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+        background-size: 220%;
+        transition: 0.3s all;
+        &:hover {
+            background-position: 100%;
+            color: $brown-light;
+        }
+        @include respond(tab-port) {
+            font-size: 3rem;
+        }
+        @include respond(phone) {
+            font-size: 2.8rem;
+        }
+
+    }
+}
